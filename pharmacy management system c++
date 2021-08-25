@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <iomanip>
+#include <string>
 using namespace std;
 int id=10;
 void Menu(){
@@ -11,8 +12,9 @@ void Menu(){
 	cout<<"+ 3. Exit                 +"<<endl;
 	cout<<"+ + + + + + + + + + + + + +"<<endl;
 }
-		
 	
+
+
 struct Date{
     int dd,mm,yy;
 };
@@ -30,6 +32,8 @@ struct medicine_types{
 void setZero(medicine_types Zero[],int n);
 void Store_Drug (medicine_types med[]);
 void View_store(medicine_types stored[]);
+void check_stack();
+
 
 int main(){ int choice;
     cout<<"---------------------------------------"<<endl;
@@ -63,6 +67,14 @@ int main(){ int choice;
     
     
 	return 0;
+}//end of main
+
+void check_stack(medicine_types store[],string name,int n){
+     for(int i=0;i<n;++i){
+        if(name==store[i].name){
+	  cout<<"There are "<<store[i].quantity<<" number of "<<name<<" type medicine in the store"<<endl;
+	}
+     }
 }
 
 void setZero(medicine_types Zero[],int n){
